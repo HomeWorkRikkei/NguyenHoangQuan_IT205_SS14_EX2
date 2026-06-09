@@ -1,15 +1,13 @@
-# Biến toàn cục lưu tổng điểm hiện tại của khách hàng
-total_points = 100
+def add_reward_points(current_points, points_earned):
+    """Hàm tính tổng điểm mới bằng cách cộng điểm thưởng vào điểm hiện tại."""
+    return current_points + points_earned
 
-# Hàm cộng điểm thưởng
-def add_reward_points(points_earned):
-    # Cố gắng lấy tổng điểm cũ cộng thêm điểm mới
-    global total_points  # Sử dụng biến toàn cục
-    total_points = total_points + points_earned
-    print("Đã cộng thêm", points_earned, "điểm.")
+# Khởi tạo điểm số trong phạm vi cục bộ (Local/Main scope)
+initial_points = 100
+reward = 50
 
-# Khách mua hàng được thưởng 50 điểm
-add_reward_points(50)
+# Truyền giá trị vào hàm và nhận lại kết quả cập nhật
+final_points = add_reward_points(initial_points, reward)
 
-# In ra kết quả
-print("Tổng điểm hiện tại của khách hàng:", total_points)
+print("Đã cộng thêm", reward, "điểm.")
+print("Tổng điểm hiện tại của khách hàng:", final_points)
